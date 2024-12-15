@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Link Generator</title>
+    <title>Facebook Link Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,25 +33,25 @@
             transition: all 0.3s ease;
         }
         input[type="text"]:hover, textarea:hover {
-            border-color: #1DA1F2; /* Twitter blue color */
-            box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);
+            border-color: #4267B2; /* Facebook blue color */
+            box-shadow: 0 0 5px rgba(66, 103, 178, 0.5);
         }
         input[type="text"]:focus, textarea:focus {
-            border-color: #1DA1F2; /* Twitter blue color */
+            border-color: #4267B2; /* Facebook blue color */
             outline: none;
-            box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);
+            box-shadow: 0 0 5px rgba(66, 103, 178, 0.5);
         }
         input[type="submit"] {
             padding: 12px;
             border: none;
             border-radius: 4px;
-            background-color: #1DA1F2; /* Twitter blue color */
+            background-color: #4267B2; /* Facebook blue color */
             color: white;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
-            background-color: #0d95e8; /* Darker blue for hover */
+            background-color: #365899; /* Darker blue for hover */
         }
         .result {
             margin-top: 20px;
@@ -72,7 +72,7 @@
             border: none;
             border-radius: 4px;
             background-color: white;
-            color: #1DA1F2; /* Twitter blue color */
+            color: #4267B2; /* Facebook blue color */
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -82,22 +82,22 @@
         }
         .copy-btn:hover {
             background-color: #e1e8ed; /* Light grey for hover */
-            color: #1DA1F2; /* Twitter blue color */
+            color: #4267B2; /* Facebook blue color */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Twitter Link Generator</h1>
+        <h1>Facebook Link Generator</h1>
         <form id="linkForm">
-            <label for="handle">Enter Twitter handle:</label>
-            <input type="text" id="handle" name="handle" placeholder="@username">
+            <label for="username">Enter Facebook username:</label>
+            <input type="text" id="username" name="username" placeholder="username">
             <label for="message">Enter your message:</label>
             <textarea id="message" name="message" rows="4" placeholder="Hello, I'd love to connect!"></textarea>
             <input type="submit" value="Generate Link">
         </form>
         <div class="result" id="result">
-            <input type="text" id="twitterLink" disabled readonly>
+            <input type="text" id="facebookLink" disabled readonly>
             <button class="copy-btn" id="copyBtn">Copy Link</button>
         </div>
     </div>
@@ -106,26 +106,26 @@
         document.getElementById('linkForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting the traditional way
 
-            // Get the Twitter handle and message from the input fields
-            var handle = document.getElementById('handle').value.trim();
+            // Get the Facebook username and message from the input fields
+            var username = document.getElementById('username').value.trim();
             var message = document.getElementById('message').value.trim();
 
             // Encode the message for URL
             var encodedMessage = encodeURIComponent(message);
 
-            // Generate the Twitter link (using a tweet URL format)
-            var twitterLink = 'https://twitter.com/intent/tweet?screen_name=' + encodeURIComponent(handle.substring(1)) + '&text=' + encodedMessage;
+            // Generate the Facebook Messenger link
+            var facebookLink = 'https://www.facebook.com/dialog/send?app_id=YOUR_APP_ID&link=https://www.facebook.com/' + encodeURIComponent(username) + '&redirect_uri=' + encodedMessage;
 
             // Display the link in the disabled input field
-            var twitterLinkInput = document.getElementById('twitterLink');
-            twitterLinkInput.value = twitterLink;
+            var facebookLinkInput = document.getElementById('facebookLink');
+            facebookLinkInput.value = facebookLink;
         });
 
         document.getElementById('copyBtn').addEventListener('click', function() {
-            var twitterLinkInput = document.getElementById('twitterLink');
+            var facebookLinkInput = document.getElementById('facebookLink');
             
             // Use Clipboard API to copy text
-            navigator.clipboard.writeText(twitterLinkInput.value).then(function() {
+            navigator.clipboard.writeText(facebookLinkInput.value).then(function() {
                 alert('Link copied to clipboard!');
             }, function(err) {
                 console.error('Failed to copy text: ', err);

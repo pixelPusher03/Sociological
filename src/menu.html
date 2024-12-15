@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Link Generators</title>
+    <!-- Font Awesome for icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .button:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            filter: blur(1px);
+            transform: scale(1.05);
+            color: white;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+        .button:active {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            filter: blur(0); /* Ensure no blur when active */
+        }
+        .button i {
+            margin-right: 10px;
+        }
+        .button span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* Glow Animation */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        /* Specific styles for each social media */
+        .whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+        .twitter {
+            background: linear-gradient(45deg, #000000, #1A1A1A); /* Black Gradient Background */
+        }
+        .instagram {
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+            background-size: 400% 400%;
+            animation: gradient 3s ease infinite;
+        }
+        .facebook {
+            background: linear-gradient(45deg, #1877F2, #4267B2);
+        }
+        .youtube {
+            background: linear-gradient(45deg, #FF0000, #CC0000);
+        }
+        .tiktok {
+            background: linear-gradient(45deg, #010101, #5F2A8C);
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }    
+        .fa.fa-twitter{
+            font-family:sans-serif;
+        }
+        .fa.fa-twitter::before{
+            content:"𝕏";
+            font-size:1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Social Media Link Generators</h1>
+        <div class="button-container">
+            <a href="/whatsapp" class="button whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp Link Generator</span></a>
+            <a href="/x" class="button twitter"><i class="fa fa-twitter"></i><span>Twitter Link Generator</span></a>
+            <a href="/instagram" class="button instagram"><i class="fab fa-instagram"></i><span>Instagram Link Generator</span></a>
+            <a href="/facebook" class="button facebook"><i class="fab fa-facebook-f"></i><span>Facebook Link Generator</span></a>
+            <!--<a href="youtube.html" class="button youtube"><i class="fab fa-youtube"></i><span>YouTube Channel Link Generator</span></a>-->
+            <a href="/tiktok" class="button tiktok"><i class="fab fa-tiktok"></i><span>TikTok Link Generator</span></a>
+        </div>
+    </div>
+
+
+</body>
+</html>
