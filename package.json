@@ -1,0 +1,18 @@
+{
+  "name": "social-gen",
+  "version": "1.0.0",
+  "description": "A simple web site made with node js that help to generate sociallinks for social media apps like whatsapp, facebook, instagram, Twitter(X) e.t.c",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "nodemon index.js"
+  },
+  "keywords": [
+    "web",
+    "website",
+    "social",
+    "tool"
+  ],
+  "author": "The Developer03",
+  "license": "ISC"
+}
